@@ -7,7 +7,7 @@ import './styles/app.sass';
 function App() {
 
   return (
-    <div>
+    <div className='App'>
       <h1>Github Finder</h1>
       <Outlet />
     </div>
