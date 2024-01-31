@@ -3,7 +3,6 @@ export type UserProps = {
     name: string,
     avatar_url: string,
     html_url: string,
-    blog: string,
     location: string,
     followers: number,
     following: number,

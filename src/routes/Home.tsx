@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 //components
 import Search from "../components/Search";
+import User from "../components/User";
+import PageLoading from "../components/PageLoading";
 
 //types
 import { UserProps } from "../types/user";
@@ -26,24 +28,19 @@ const Home = () => {
     useEffect(() => {
 
         if(isSuccess){
-            const { login, name, avatar_url, html_url, blog, location, followers, following, public_repos, created_at } = data;
+            const { login, name, avatar_url, html_url, location, followers, following, public_repos, created_at } = data;
             const userData: UserProps = {
                 login, 
                 name, 
                 avatar_url, 
-                html_url, 
-                blog, 
+                html_url,
                 location, 
                 followers, 
                 following, 
                 public_repos, 
-                created_at
+                created_at,
             };
             setUser(userData)
-        }
-
-        if(isLoading){
-            console.log("Carregando...")
         }
 
         if(isError){
@@ -59,7 +56,10 @@ const Home = () => {
     <div>
         <Search getUser={getUser}/>
         {user && (
-            <p>{user.name}</p>
+            <User {...user}/>
+        )}
+        {isLoading && (
+            <PageLoading/>
         )}
     </div>
   )

@@ -5,9 +5,11 @@ const API_URL = "https://api.github.com/users"
 
 const fetchUser = async(userName: string | null): Promise<any> => {
 
-    const response = await fetch(`${API_URL}/${userName}`);
-    const data = await response.json();
-    return data
+        const response = await fetch(`${API_URL}/${userName}`);
+
+        const data = await response.json();
+
+        return data
 
 }
 
