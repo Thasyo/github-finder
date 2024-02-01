@@ -7,9 +7,12 @@ const fetchUser = async(userName: string | null): Promise<any> => {
 
         const response = await fetch(`${API_URL}/${userName}`);
 
-        const data = await response.json();
-
-        return data
+        if(!response.ok){
+            const errorStatus = "Usuário não encontrado!"
+            return errorStatus
+        }else{
+            return response.json()
+        }
 
 }
 
