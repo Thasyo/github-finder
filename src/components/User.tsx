@@ -7,8 +7,11 @@ import { UserProps } from "../types/user"
 //react-icons
 import { FaLocationDot, FaComments, FaBookBookmark, FaGithub } from "react-icons/fa6";
 
+//styles
+import '../styles/components/user.sass'
+
 //components
-import Error from "./Error";
+import Error from "./Error"
 
 const User = ({avatar_url, created_at, followers, following, html_url, location, login, name, public_repos}: UserProps) => {
   return (
@@ -18,10 +21,10 @@ const User = ({avatar_url, created_at, followers, following, html_url, location,
         ) : (
             <div className="container">
                 <div className="user-info">
-                    <img src={avatar_url} alt={name} />
-                    <div>
-                        {name && <p>{name}</p>}
-                        <p>{login}</p>
+                    <div className="container-img"><img src={avatar_url} alt={name} /></div>
+                    <div className="container-info-name-login">
+                        {name && <p className="name">{name}</p>}
+                        <p className="login">{login}</p>
                     </div>
                 </div>
                 <div className="user-details">
