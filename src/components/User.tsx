@@ -13,27 +13,26 @@ import '../styles/components/user.sass'
 //components
 import Error from "./Error"
 
+
 const User = ({avatar_url, created_at, followers, following, html_url, location, login, name, public_repos}: UserProps) => {
   return (
-    <div>
+    <>
         {login === undefined ? (
             <Error />
         ) : (
             <div className="container">
+                
                 <div className="user-info">
-                    <div className="container-img"><img src={avatar_url} alt={name} /></div>
+                    <div className="container-img">
+                        <img src={avatar_url} alt={name} /> 
+                    </div>
                     <div className="container-info-name-login">
                         {name && <p className="name">{name}</p>}
                         <p className="login">{login}</p>
                     </div>
                 </div>
+
                 <div className="user-details">
-                    {location && (
-                        <div>
-                            <FaLocationDot className="icons"/>
-                            <p>{location}</p>
-                        </div>
-                    )}
                     <div>
                         <div>
                             <FaComments className="icons"/>
@@ -44,6 +43,12 @@ const User = ({avatar_url, created_at, followers, following, html_url, location,
                             <p>Seguindo: {following}</p>
                         </div>
                     </div>
+                    {location && (
+                        <div>
+                            <FaLocationDot className="icons"/>
+                            <p>{location}</p>
+                        </div>
+                    )}
                     <div>
                         <div>
                             <FaBookBookmark className="icons"/>
@@ -54,15 +59,16 @@ const User = ({avatar_url, created_at, followers, following, html_url, location,
                         </div>
                         <div>
                             <Link to={`/repos/${login}`}>Projetos</Link>
+                        </div>        
+                        <div>
+                            <span>{created_at}</span>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <span>{created_at}</span>
-                </div>
+
             </div>
         )}
-    </div>
+    </>
   )
 }
 

@@ -2,28 +2,56 @@
 
 .container
     display: flex
-    flex-direction: column
     width: 50vw
-    border: solid 1px #000000cc
-
-    @media screen and (max-width: 450px)
-        width: 80vw
+    margin-top: 10px
+    border-radius: 10px
+    border: solid 1px #d7d7d7
 
     .user-info
         display: flex
-        justify-content: flex-start
+        flex-direction: column
         align-items: center
-        width: 100%
+        width: 50%
+        background: variables.$background-secondary
+        border-radius: 10px 0px 0px 10px
+        border-right: dashed 2px #d7d7d7
+        padding: 15px
 
         .container-img
             display: flex
             justify-content: center
             align-items: center 
-            width: 50%
-            margin: 10px
+            width: 200px
+            margin: 15px 50px
             border-radius: 100%
             border: solid 3px variables.$border-img
 
             img
                 width: 100%
                 border-radius: 100%
+
+        .container-info-name-login
+
+            .name
+                color: variables.$font-color
+                font-weight: bold
+                font-size: 1.2rem
+                background: variables.$background-secondary
+
+            .login
+                color: variables.$font-color-secondary
+                background: variables.$background-secondary
+
+
+@media screen and (max-width: 450px)
+
+    .container
+        flex-direction: column
+        width: 80vw
+
+        .user-info
+            width: 100%
+            border-right: none
+            border-bottom: dashed 2px #d7d7d7
+            border-radius: 10px 10px 0px 0px
+            margin-bottom: 15px

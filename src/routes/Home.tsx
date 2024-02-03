@@ -47,6 +47,10 @@ const Home = () => {
             console.log(`Houve um erro: ${error}`)
         }
 
+        if(isLoading){
+            setUser(null)
+        }
+
     }, [data])
 
     console.log(user)
