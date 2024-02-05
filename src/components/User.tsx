@@ -33,23 +33,23 @@ const User = ({avatar_url, created_at, followers, following, html_url, location,
                 </div>
 
                 <div className="user-details">
-                    <div>
+                    <div className="followers-following">
+                        <FaComments className="icons"/>
                         <div>
-                            <FaComments className="icons"/>
-                            <p>Seguidores: {followers}</p>
+                            <p>Seguidores: <span>{followers}</span></p>
                         </div>
                         <span className="division">|</span>
                         <div>
-                            <p>Seguindo: {following}</p>
+                            <p>Seguindo: <span>{following}</span></p>
                         </div>
                     </div>
                     {location && (
-                        <div>
+                        <div className="location">
                             <FaLocationDot className="icons"/>
                             <p>{location}</p>
                         </div>
                     )}
-                    <div>
+                    <div className="others-info">
                         <div>
                             <FaBookBookmark className="icons"/>
                             <p>Total de Repositórios: {public_repos}</p>
