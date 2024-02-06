@@ -12,9 +12,14 @@ import '../styles/components/user.sass'
 
 //components
 import Error from "./Error"
+import { format } from "date-fns";
 
 
 const User = ({avatar_url, created_at, followers, following, html_url, location, login, name, public_repos}: UserProps) => {
+
+    const createdDate = format(created_at, "dd/MM/yyyy")
+    const createdHours = format(created_at, "HH:mm:ss")
+
   return (
     <>
         {login === undefined ? (
@@ -52,16 +57,16 @@ const User = ({avatar_url, created_at, followers, following, html_url, location,
                     <div className="others-info">
                         <div>
                             <FaBookBookmark className="icons"/>
-                            <p>Total de Repositórios: {public_repos}</p>
+                            <p>Total de Repositórios: <span>{public_repos}</span></p>
                         </div>
-                        <div>
+                        <div className="btn-gtihub">
                             <a href={html_url} target="_blank"> <FaGithub className="icons"/> Github</a>
                         </div>
                         <div>
-                            <Link to={`/repos/${login}`}>Projetos</Link>
+                            <Link to={`/repos/${login}`}><FaGithub className="icons"/> Projetos</Link>
                         </div>        
                         <div>
-                            <span>{created_at}</span>
+                            <span>Criado em {createdDate} às {createdHours}</span>
                         </div>
                     </div>
                 </div>
