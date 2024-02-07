@@ -1,3 +1,6 @@
+//react
+import {useEffect, useState} from 'react'
+
 //react-router-dom
 import { Link } from "react-router-dom"
 
@@ -17,8 +20,14 @@ import { format } from "date-fns";
 
 const User = ({avatar_url, created_at, followers, following, html_url, location, login, name, public_repos}: UserProps) => {
 
-    const createdDate = format(created_at, "dd/MM/yyyy")
-    const createdHours = format(created_at, "HH:mm:ss")
+    const [originDate, setOriginDate] = useState('')
+
+    useEffect(() => {
+        if(login !== undefined){
+            const createdDate = format(created_at, "dd/MM/yyyy")
+            setOriginDate(createdDate)
+        }
+    }, [login])
 
   return (
     <>
@@ -55,18 +64,18 @@ const User = ({avatar_url, created_at, followers, following, html_url, location,
                         </div>
                     )}
                     <div className="others-info">
-                        <div>
+                        <div className="repos">
                             <FaBookBookmark className="icons"/>
                             <p>Total de Repositórios: <span>{public_repos}</span></p>
                         </div>
-                        <div className="btn-gtihub">
+                        <div className="btn">
                             <a href={html_url} target="_blank"> <FaGithub className="icons"/> Github</a>
                         </div>
-                        <div>
+                        <div className="btn">
                             <Link to={`/repos/${login}`}><FaGithub className="icons"/> Projetos</Link>
                         </div>        
                         <div>
-                            <span>Criado em {createdDate} às {createdHours}</span>
+                            <span>Criado em {originDate}</span>
                         </div>
                     </div>
                 </div>

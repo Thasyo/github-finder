@@ -104,9 +104,9 @@
                 display: flex
                 align-items: center
                 justify-content: center
-                width: 100%
+                width: 50%
                 background: variables.$background-secondary
-                margin-bottom: 10px
+                margin: 10px
 
                 p
                     background: variables.$background-secondary
@@ -122,7 +122,7 @@
                     border-radius: 5px
                     padding: 4px
                     background: #fff
-                    width: 50%
+                    width: 100%
 
                     &:hover
                         cursor: pointer
@@ -132,6 +132,9 @@
 
                     .icons
                         background: #fff
+            
+            .btn
+                width: 250px
 
 
 
@@ -145,6 +148,8 @@
 
     .container
         flex-direction: column
+        justify-content: center
+        align-items: center
         width: 80vw
 
         .user-info
@@ -153,3 +158,16 @@
             border-bottom: dashed 2px #d7d7d7
             border-radius: 10px 10px 0px 0px
             margin-bottom: 15px
+        
+        .user-details
+            width: 100%
+            gap: 5px
+
+            .others-info
+
+                div
+                    width: 100%
+                    margin: 10px
+
+                .repos
+                    width: 100%
