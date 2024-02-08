@@ -10,7 +10,7 @@ import PageLoading from "../components/PageLoading";
 import { UserProps } from "../types/user";
 
 //hooks
-import { useQueryUser } from "../hooks/useQueryUser";
+import { useQueryUser } from "../hooks/useQuery";
 
 const Home = () => {
     

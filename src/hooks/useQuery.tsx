@@ -16,14 +16,34 @@ const fetchUser = async(userName: string | null): Promise<any> => {
 
 }
 
+const fetchProjects = async(userLogin: string | undefined): Promise<any> => {
+
+    const response = await fetch(`${API_URL}/${userLogin}/repos`);
+
+    return response.json()
+
+}
+
+export const useQueryProjects = (userLogin: string | undefined) => {
+
+    const queryProjects = useQuery({
+        queryKey: ['users', userLogin],
+        queryFn: () => fetchProjects(userLogin),
+        enabled: !!userLogin
+    })
+
+    return {...queryProjects, data: queryProjects.data}
+
+}
+
 export const useQueryUser = (userData: string | null) => {
 
-    const query = useQuery({
+    const queryUser = useQuery({
         queryKey: ['users', userData],
         queryFn: () => fetchUser(userData),
         enabled: !!userData
     })
 
-    return {...query, data: query.data}
+    return {...queryUser, data: queryUser.data}
 
 }

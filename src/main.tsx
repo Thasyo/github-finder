@@ -18,6 +18,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 //pages
 import Home from "./routes/Home.tsx";
+import Projects from './routes/Projects.tsx';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       {
          path: '/',
          element: <Home /> 
-      }
+      },
+      {
+        path: '/repos/:login',
+        element: <Projects /> 
+     }
     ]
   }
 ])
