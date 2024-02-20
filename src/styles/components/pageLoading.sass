@@ -1,0 +1,25 @@
+@use '../variables/variables'
+    
+.pageLoading
+    display: flex
+    justify-content: center
+    align-content: center
+    width: 50vw
+    height: 200px
+    margin-top: 10px
+    border-radius: 10px
+    border: solid 1px #d7d7d7
+    background: variables.$background-secondary
+
+    img 
+        margin: 0 auto
+        background: variables.$background-secondary
+        width: 25%
+        height: 100%
+    
+
+@media screen and (max-width: 450px)
+
+    .pageLoading
+        width: 80vw
+

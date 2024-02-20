@@ -1,21 +1,24 @@
 //react-router-dom
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 
 //hooks
 import { useQueryProjects } from '../hooks/useQuery'
 
 //components
 import CardProject from '../components/CardProject'
+import PageLoading from '../components/PageLoading'
+import Error from '../components/Error'
+import NoProjects from '../components/NoProjects'
 
 //types
 import { ProjectsProps } from '../types/projects'
 
 //react
 import { useEffect, useState } from 'react'
-import PageLoading from '../components/PageLoading'
-import Error from '../components/Error'
 
 const Projects = () => {
+
+    const navigate = useNavigate()
 
     const [projects, setProjects] = useState<ProjectsProps[]>([])
 
@@ -41,7 +44,7 @@ const Projects = () => {
       <h3>Explore os repositórios do usuário: {login}</h3>
       <section>
         <div>
-          <button>Voltar ao início</button>
+          <button onClick={() => navigate('/')}>Voltar ao início</button>
         </div>
         {projects && projects.map((project) => (
           <CardProject
@@ -54,9 +57,9 @@ const Projects = () => {
             created_at={project.created_at}
           />
         ))}
-        {projects.length === 0 && <p>Não há repositórios!</p>}
-        {isLoading && <PageLoading/>}
-        {isError && <Error/>}
+        {projects?.length === 0 && <NoProjects />}
+        {isLoading && <PageLoading />}
+        {isError && <Error />}
       </section>
     </div>
   )

@@ -1,8 +1,13 @@
+//styles
+import "../styles/components/pageLoading.sass"
+
+//assets
+import loading from "../assets/loading.gif"
 
 const PageLoading = () => {
   return (
-    <div>
-        <p>Carregando...</p>
+    <div className="pageLoading">
+        <img src={loading} alt="loading-gif" />
     </div>
   )
 }
