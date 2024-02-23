@@ -7,7 +7,6 @@ import { useQueryProjects } from '../hooks/useQuery'
 //components
 import CardProject from '../components/CardProject'
 import PageLoading from '../components/PageLoading'
-import Error from '../components/Error'
 import NoProjects from '../components/NoProjects'
 
 //types
@@ -24,7 +23,7 @@ const Projects = () => {
 
     const {login} = useParams()
 
-    const {data, isError, isLoading} = useQueryProjects(login)
+    const {data, isLoading} = useQueryProjects(login)
 
     useEffect(() => {
       if (data && Array.isArray(data)) {
@@ -57,9 +56,8 @@ const Projects = () => {
             created_at={project.created_at}
           />
         ))}
-        {projects?.length === 0 && <NoProjects />}
+        {projects?.length === 0 && isLoading === false ? (<NoProjects />) : ('')}
         {isLoading && <PageLoading />}
-        {isError && <Error />}
       </section>
     </div>
   )

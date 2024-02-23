@@ -1,6 +1,11 @@
+//styles
+import '../styles/components/noProjects.sass'
+
 const NoProjects = () => {
   return (
-    <div>Não há projetos!</div>
+    <div className="noProjects">
+      <p>Não há projetos!</p>
+    </div>
   )
 }
 

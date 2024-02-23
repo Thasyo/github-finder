@@ -1,6 +1,9 @@
+//styles
+import '../styles/components/error.sass'
+
 const Error = () => {
   return (
-    <div className="error-message">
+    <div className="errorMessage">
         <p>Usuário não encontrado!</p>
     </div>
   )
