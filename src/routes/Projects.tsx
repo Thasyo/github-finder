@@ -6,7 +6,6 @@ import { useQueryProjects } from '../hooks/useQuery'
 
 //components
 import CardProject from '../components/CardProject'
-import PageLoading from '../components/PageLoading'
 import NoProjects from '../components/NoProjects'
 
 //types
@@ -14,6 +13,9 @@ import { ProjectsProps } from '../types/projects'
 
 //react
 import { useEffect, useState } from 'react'
+
+//styles
+import '../styles/components/projects.sass'
 
 const Projects = () => {
 
@@ -23,28 +25,21 @@ const Projects = () => {
 
     const {login} = useParams()
 
-    const {data, isLoading} = useQueryProjects(login)
+    const {data} = useQueryProjects(login)
 
     useEffect(() => {
       if (data && Array.isArray(data)) {
-        const isValidData = data.every(item => typeof item === 'object' && item !== null);
-        if (isValidData) {
-          setProjects(data);
-        } else {
-          console.error("Data não está no formato esperado."); 
-        }
-      } else {
-        console.error("Data não é um array."); 
+        setProjects(data);
       }
     }, [data])
 
   return (
-    <div>
-      <h3>Explore os repositórios do usuário: {login}</h3>
-      <section>
-        <div>
+    <div className='projects'>
+      <div className='btnHomePage-title'>
           <button onClick={() => navigate('/')}>Voltar ao início</button>
-        </div>
+          <h3>Explore os repositórios do usuário: {login}</h3>
+      </div>
+      <section>
         {projects && projects.map((project) => (
           <CardProject
             key={project.name} 
@@ -56,8 +51,7 @@ const Projects = () => {
             created_at={project.created_at}
           />
         ))}
-        {projects?.length === 0 && isLoading === false ? (<NoProjects />) : ('')}
-        {isLoading && <PageLoading />}
+        {projects?.length === 0 && (<NoProjects />)}
       </section>
     </div>
   )
