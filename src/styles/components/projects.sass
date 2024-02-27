@@ -7,8 +7,12 @@
 
     .btnHomePage-title
         display: flex
-        border: solid 1px 1px 0px 0px  #d7d7d7
+        justify-content: center
+        align-items: center
+        border-bottom: 1px solid #d7d7d7
+        background: variables.$background-secondary
         border-radius: 10px 10px 0px 0px 
+        margin-bottom: 10px
 
         h3
             border: solid 1px 1px 0px 0px  #d7d7d7
@@ -16,16 +20,17 @@
             width: 100%
             font-size: 1.5rem
             color: variables.$font-color-secondary
+            background: variables.$background-secondary
             padding: 20px
         
         button
-                width: 100px
+                width: 150px
                 border: 1px solid #d7d7d7
                 border-radius: 5px
-                margin-left: 10px
-                padding: 4px        
+                padding: 8px 15px 
+                margin-left: 10px     
                 display: flex
-                justify-content: space-evenly
+                justify-content: center
                 align-items: center
 
                 &:hover
@@ -39,5 +44,19 @@
         flex-direction: column
         justify-content: center
         align-items: center
+        gap: 10px
+        background: variables.$background-secondary
 
+
+
+@media screen and (max-width: 450px)
+
+    .projects
+
+        .btnHomePage-title
+            flex-direction: column-reverse
             
+            button
+                margin-bottom: 10px
+                width: 80%
+    

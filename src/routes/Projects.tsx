@@ -33,10 +33,12 @@ const Projects = () => {
       }
     }, [data])
 
+    console.log(projects)
+
   return (
     <div className='projects'>
       <div className='btnHomePage-title'>
-          <button onClick={() => navigate('/')}>Voltar ao início</button>
+          <button onClick={() => navigate('/')}>Voltar</button>
           <h3>Explore os repositórios do usuário: {login}</h3>
       </div>
       <section>
@@ -49,6 +51,7 @@ const Projects = () => {
             html_url={project.html_url}
             homepage={project.homepage}
             created_at={project.created_at}
+            login={login}
           />
         ))}
         {projects?.length === 0 && (<NoProjects />)}
