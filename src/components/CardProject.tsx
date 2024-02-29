@@ -32,7 +32,7 @@ const CardProject = ({name, description, language, html_url, homepage, created_a
     <div className="card">
         <h2>{name}</h2>
         {description ? <div className="description">
-            <p><span>Descrição do Projeto:</span> {description}</p>
+            <p><span>Descrição:</span> {description}</p>
         </div> : ''}
         <div className="language">
             <p><span>Linguagem Principal:</span> {language}</p>

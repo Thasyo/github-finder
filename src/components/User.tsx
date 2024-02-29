@@ -75,7 +75,7 @@ const User = ({avatar_url, created_at, followers, following, html_url, location,
                             <Link to={`/repos/${login}`}><FaGithub className="icons"/> Projetos</Link>
                         </div>        
                         <div>
-                            <span>Criado em {originDate}</span>
+                            <span>No Github desde: {originDate}</span>
                         </div>
                     </div>
                 </div>

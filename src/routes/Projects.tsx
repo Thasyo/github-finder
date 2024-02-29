@@ -33,7 +33,13 @@ const Projects = () => {
       }
     }, [data])
 
-    console.log(projects)
+    const OrderByData = (a:ProjectsProps, b:ProjectsProps) => {
+      if (a.created_at > b.created_at) return -1;
+      if (a.created_at < b.created_at) return 1;
+      return 0;
+    }
+
+    const projectsInOrderByData = projects.sort(OrderByData)
 
   return (
     <div className='projects'>
@@ -42,7 +48,7 @@ const Projects = () => {
           <h3>Explore os repositórios do usuário: {login}</h3>
       </div>
       <section>
-        {projects && projects.map((project) => (
+        {projectsInOrderByData && projectsInOrderByData.map((project) => (
           <CardProject
             key={project.name} 
             name={project.name}
