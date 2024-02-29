@@ -1,11 +1,89 @@
 @use "../variables/variables"
-    
+
 .card
+    margin: 10px 0px
     background: variables.$background-secondary
+    width: 80%
+    border-radius: 10px
 
     h2
+        font-weight: bold
+        width: 100%
+        text-align: center
+        padding: 10px
+        border-radius: 10px 10px 0px 0px
+        border-bottom: 1px solid #d7d7d77c
         background: variables.$background-secondary
-
+    
     div
         background: variables.$background-secondary
+        border-bottom: 1px solid #d7d7d77c
+
+    .description
+        padding: 10px
+        background: variables.$background-secondary
+        text-align: justify
+
+        p
+            background: variables.$background-secondary
+            color: variables.$font-color-secondary
+            letter-spacing: 0.5px
+
+            span
+                background: variables.$background-secondary
+                color: variables.$font-color-secondary
+                font-weight: bold
+    
+    .language
+        padding: 10px
+        background: variables.$background-secondary
+        text-align: justify
+
+        p
+            background: variables.$background-secondary
+            color: variables.$font-color-secondary
+            letter-spacing: 0.5px
+
+            span
+                background: variables.$background-secondary
+                color: variables.$font-color-secondary
+                font-weight: bold
+    
+    .btns
+        padding: 10px
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+
+        a
+            width: 150px
+            border: 1px solid #d7d7d7
+            border-radius: 5px
+            padding: 8px 15px 
+            margin-left: 10px     
+            display: flex
+            justify-content: center
+            align-items: center
+            text-decoration: none
+
+            &:hover
+                cursor: pointer
+                border: 1px solid #000
+                box-shadow: 0 3px 2px #0000002a
+                transition: .2s
+    
+    .date
+        padding: 10px
+        border-radius: 0px 0px 10px 10px
+
+        span
+            font-weight: 600
+            background: variables.$background-secondary
+
+@media screen and (max-width: 450px)
+
+    .card
+        width: 90%
+
+
 

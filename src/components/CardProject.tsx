@@ -28,20 +28,18 @@ const CardProject = ({name, description, language, html_url, homepage, created_a
         }
     }, [login])
 
-    console.log(originDate)
-
     return (
     <div className="card">
         <h2>{name}</h2>
-        <div className="description">
-            {description && <p><span>Descrição do Projeto:</span> {description}</p>}
-        </div>
+        {description ? <div className="description">
+            <p><span>Descrição do Projeto:</span> {description}</p>
+        </div> : ''}
         <div className="language">
             <p><span>Linguagem Principal:</span> {language}</p>
         </div>
         <div className="btns">
             <a href={html_url} target="_blank">Código</a>
-            {homepage && <a href={homepage} target="_blank">Site</a>}
+            {homepage ? <a href={homepage} target="_blank">Site</a> : ''}
         </div>
         <div className="date">
             <span>Projeto criado em {originDate}</span>
