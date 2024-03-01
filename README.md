@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# GITHUB FINDER
 
-Currently, two official plugins are available:
+## Preview do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Versão Desktop
+![preview](./public/github-finder-pc.gif)
 
-## Expanding the ESLint configuration
+### Versão Responsiva
+![preview](./public/github-finder-mobile.gif)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 📃 Descrição 📃
 
-- Configure the top-level `parserOptions` property like this:
+- Objetivo
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+    - O objetivo deste projeto é facilitar a leitura dos dados dos usuários do github, apresentando dados, como: Nome, Localização, Tempo como usuário do Github, seus seguidores, todos os repositórios (projetos) ordenados pelo mais recente, etc.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Propósito
+
+    - O propósito deste projeto foi exclusivamente para desenvolver os meus estudos, praticando e concretizando os meus conhecimentos em React, Typescript e Sass. Além de conhecer novas ferramentas como: React-query, A biblioteca Date-fns, entre outras.
+
+### 📉 Funcionalidades 📈
+
+- Consultar usuários do github;
+- Visitar o perfil do usuário do github;
+- Visitar projetos específicos do usuário do github;
+- Visitar sites do usuário do github (se tiver); 
+
+### 🛠️ Tecnologias 🛠️
+
+- REACT
+- REACT QUERY
+- DATE-FNS
+- TYPESCRIPT
+- SASS
+- GIT
+- GITHUB
+- VSCODE
+
+### 👨‍💻 Status do Projeto 👨‍💻
+
+- Finalizado com Sucesso! ✔️
+
+## 🛑 Não pare por aqui! 🛑
+
+- Gostou do meu projeto? Então me acompanhe no LinkedIn, para ficar por dentro das minhas últimas aplicações! 😉
+
+- [Linkedin](https://www.linkedin.com/in/thasyo-peres-63aa27235/)
