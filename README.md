@@ -1,6 +1,10 @@
 
 # GITHUB FINDER
 
+## Visite o site
+
+-  🔗[ Acessar projeto](https://github-finder-ebon-iota.vercel.app/)
+
 ## Preview do Projeto
 
 ### Versão Desktop
